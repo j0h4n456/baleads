@@ -1,0 +1,74 @@
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Eliminamos el margen para evitar desplazamientos inesperados */
+    padding-top: 70px; /* Añadimos un margen superior para compensar el tamaño de la barra de navegación */
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Para asegurarnos de que siempre esté encima del contenido */
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Estilo para el menú hamburguesa (para móviles) */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsivo: cuando la pantalla es pequeña */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}

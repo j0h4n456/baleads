@@ -1,0 +1,54 @@
+ 
+body{background-color: aquamarine;}
+
+.contenedor-imagen:hover img {
+  transform: scale(1.1) rotate(10deg);
+    float:inherit;
+}
+.imagen-animada img {
+  width: 300px;
+  animation: girar 4s infinite alternate;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.boton-borde-deslizante {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #007BFF;
+  background-color: transparent;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.4s;
+}
+
+.boton-borde-deslizante:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #007BFF;
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.boton-borde-deslizante:hover:before {
+  width: 100%;
+}
+
+.boton-borde-deslizante:hover {
+  color: white;
+}
+
